@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+cp $SNAP/traefik.toml $SNAP_DATA/traefik.toml
