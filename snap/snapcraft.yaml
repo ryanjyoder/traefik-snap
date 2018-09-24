@@ -24,17 +24,22 @@ parts:
             case "$SNAPCRAFT_ARCH_TRIPLET" in
                 i386-linux-gnu)
                         echo i386
-                        wget -O traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-386
+                        curl -o traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-386
                         ;;
 
                 x86_64-linux-gnu)
                         echo arm64
-                        wget -O traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-amd64
+                        curl -o traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-amd64
                         ;;
 
-                arm=linux-gnu)
+                arm-linux-gnueabihf)
                         echo arm
-                        wget -O traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-arm
+                        curl -o traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-arm
+                        ;;
+
+                aarch64-linux-gnu)
+                        echo arm
+                        curl -o traefik https://github.com/containous/traefik/releases/download/v1.7.0-rc5/traefik_linux-arm64
                         ;;
 
                 *)
